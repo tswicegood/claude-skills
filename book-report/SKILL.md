@@ -160,3 +160,4 @@ I've completed comprehensive research on [Book Title] by [Author].
 - Don't list obvious insights - dig for hidden gems
 - Don't copy book summaries verbatim - paraphrase and cite
 - Don't skip the confirmation step - verify the correct book first
+
