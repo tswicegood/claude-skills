@@ -15,6 +15,10 @@ Activate this skill when the user says:
 - "Analyze {Book Title}"
 - Similar requests for book analysis or research
 
+**Conciseness Modes:**
+- Default: Concise, edited reports (50% reduction from initial draft)
+- Verbose mode: When user requests "detailed," "comprehensive," "full," or "wordy" version
+
 ## Context Adaptation
 
 This skill adapts to the project context (professional/business, personal development, academic, hobby). Infer context from:
@@ -59,7 +63,30 @@ Once confirmed, conduct comprehensive research using web_search extensively. Gat
 - Summary resources
 - Related discussions
 
-Create an artifact (.md file) with the full report using the structure below. Also provide a one-paragraph "bottom line up front" summary in the main response.
+Create an initial draft with the full report using the structure below.
+
+### Step 3: Editorial Pass for Conciseness
+
+**Default behavior (concise mode):**
+After completing the initial draft, perform a rigorous editing pass to reduce content by approximately 50% while preserving all critical insights:
+
+1. **Identify core insights:** Mark the essential points that must remain
+2. **Eliminate redundancy:** Remove repetitive explanations and examples
+3. **Tighten language:** Replace wordy phrases with concise alternatives
+4. **Consolidate sections:** Merge overlapping points
+5. **Focus on actionability:** Keep what's implementable, remove philosophical padding
+
+**Quality standards for editing:**
+- Every remaining sentence must serve a clear purpose
+- No loss of critical insights or actionable recommendations
+- Maintain the full 8-section structure
+- Preserve context-specific adaptations
+- Keep all strategic insights from "Hidden Gems"
+
+**Verbose mode exception:**
+Skip this step entirely if the user's request includes words like "detailed," "comprehensive," "full," "thorough," or "wordy." Proceed directly with the unedited comprehensive report.
+
+After editing (or if skipping in verbose mode), create an artifact (.md file) with the final report. Also provide a one-paragraph "bottom line up front" summary in the main response.
 
 ## Report Structure
 
@@ -136,6 +163,7 @@ Tailor recommendations to context:
 - **Context awareness:** Seamlessly adapt tone and focus to project context
 - **Citation quality:** Focus on authoritative sources (author interviews, scholarly analyses, reputable publications)
 - **Depth over breadth:** Better to deeply analyze 4-5 key concepts than superficially cover 10
+- **Conciseness by default:** Edit ruthlessly to reduce length by ~50% without losing substance (unless verbose mode requested)
 
 ## Response Format
 
@@ -146,7 +174,7 @@ After completing research:
 
 **Example main response:**
 ```
-I've completed comprehensive research on [Book Title] by [Author].
+I've completed comprehensive research on [Book Title] by [Author] and edited it for conciseness while preserving all critical insights.
 
 [One-paragraph BLUF summary]
 
@@ -160,4 +188,5 @@ I've completed comprehensive research on [Book Title] by [Author].
 - Don't list obvious insights - dig for hidden gems
 - Don't copy book summaries verbatim - paraphrase and cite
 - Don't skip the confirmation step - verify the correct book first
+- Don't skip the editing pass unless verbose mode is requested - wordiness obscures insights
 
