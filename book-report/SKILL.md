@@ -53,15 +53,28 @@ I found the following book:
 Is this the correct book you'd like me to research?
 ```
 
-### Step 2: Comprehensive Research & Analysis
+### Step 2: Adaptive Research Protocol
 
-Once confirmed, conduct comprehensive research using web_search extensively. Gather information from:
-- Book reviews (professional and reader reviews)
-- Academic analyses
-- Expert commentary
-- Author interviews
-- Summary resources
-- Related discussions
+Once confirmed, execute the following structured research process:
+
+**PHASE 1: RECONNAISSANCE (Max 5 searches)**
+- Search for: [book title + author], [book title + reviews], [book title + summary]
+- Assess information density:
+  * HIGH: 3+ detailed sources found (professional reviews, author interviews, critical analysis)
+  * MEDIUM: 2-3 basic sources (publisher description, brief reviews, goodreads)
+  * LOW: 0-1 sources or only announcement/pre-release info
+
+**DECISION CHECKPOINT:**
+- IF information density = HIGH → Research Mode OFF (sufficient data in 10-15 total searches)
+- IF information density = MEDIUM → Research Mode PARTIAL (up to 20 searches, focus on depth)
+- IF information density = LOW → Research Mode OFF (stop at 15 searches, note limited availability)
+
+Explicitly state your decision and reasoning before proceeding to Phase 2.
+
+**PHASE 2: DEEP RESEARCH**
+- Execute based on decision from checkpoint
+- Gather information from: book reviews (professional and reader), academic analyses, expert commentary, author interviews, summary resources, related discussions
+- Stop early if searches return redundant information
 
 Create an initial draft with the full report using the structure below.
 
@@ -157,7 +170,7 @@ Tailor recommendations to context:
 
 ## Quality Standards
 
-- **Multi-source research:** Use 5+ web searches to gather diverse perspectives
+- **Adaptive research:** Follow the phased research protocol with density assessment and appropriate search limits
 - **Original synthesis:** Avoid merely aggregating summaries - provide unique insights
 - **Actionability:** Make every recommendation concrete and implementable
 - **Context awareness:** Seamlessly adapt tone and focus to project context
