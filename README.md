@@ -25,6 +25,7 @@ Skills are available as individual ZIP files from the latest release:
 **[Download Latest Skills →](../../releases/latest)**
 
 Each skill can be downloaded separately:
+- [`agent-creator.zip`](../../releases/latest/download/agent-creator.zip)
 - [`book-report.zip`](../../releases/latest/download/book-report.zip)
 
 ### Installation
@@ -34,6 +35,32 @@ Each skill can be downloaded separately:
 3. The skill will be automatically available in Claude Code
 
 ## Available Skills
+
+### 🤖 [Agent Creator](./agent-creator)
+
+**Description:** Interview-based system for creating specialized Claude Code agents with complete CLAUDE.md configurations, workflows, and quality gates.
+
+**Use when:**
+- Creating a custom Claude Code agent
+- Need help defining agent roles and responsibilities
+- Want to generate a CLAUDE.md file for agentic workflows
+- Building specialized coding assistants
+
+**Key features:**
+- 7-phase interactive interview process
+- Generates complete CLAUDE.md configurations
+- Creates custom command files when needed
+- Token-efficient agent design patterns
+- Pre-built templates for common agent roles
+- Clear boundaries with autonomy levels and constraints
+
+**Trigger phrases:**
+- "Create an agent"
+- "Build an agent"
+- "Help me create a Claude Code agent"
+- "Generate a CLAUDE.md file"
+
+[View full documentation →](./agent-creator/SKILL.md)
 
 ### 📚 [Book Report](./book-report)
 
