@@ -20,18 +20,18 @@ Learn more about Claude Skills:
 
 ### Download Skills
 
-Skills are available as individual ZIP files from the latest release:
+Skills are available as individual `.skill` files from the latest release:
 
 **[Download Latest Skills →](../../releases/latest)**
 
 Each skill can be downloaded separately:
-- [`agent-creator.zip`](../../releases/latest/download/agent-creator.zip)
-- [`book-report.zip`](../../releases/latest/download/book-report.zip)
+- [`agent-creator.skill`](../../releases/latest/download/agent-creator.skill)
+- [`book-report.skill`](../../releases/latest/download/book-report.skill)
 
 ### Installation
 
-1. Download the desired skill ZIP file from the releases page
-2. Extract the ZIP to your Claude skills directory (`~/.claude/skills/`)
+1. Download the desired `.skill` file from the releases page
+2. Extract the `.skill` file to your Claude skills directory (`~/.claude/skills/`)
 3. The skill will be automatically available in Claude Code
 
 ## Available Skills
@@ -122,15 +122,15 @@ See [CLAUDE.md](./CLAUDE.md) for detailed guidance on skill architecture.
 
 ## How Skills Are Released
 
-This repository uses a GitHub Action to automatically create ZIP files:
+This repository uses a GitHub Action to automatically create `.skill` files:
 
 - **Trigger:** Changes to `*/SKILL.md` or `*/references/**` on `main` branch
-- **Output:** A "latest" release with individual skill ZIPs
-- **Updates:** Each push updates the existing release with fresh ZIPs
+- **Output:** A "latest" release with individual `.skill` files
+- **Updates:** Each push updates the existing release with fresh `.skill` files
 
 Skills can be downloaded via stable URLs:
 ```
-https://github.com/{owner}/{repo}/releases/latest/download/{skill-name}.zip
+https://github.com/{owner}/{repo}/releases/latest/download/{skill-name}.skill
 ```
 
 ## Contributing
