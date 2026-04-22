@@ -27,6 +27,7 @@ Skills are available as individual `.skill` files from the latest release:
 Each skill can be downloaded separately:
 - [`agent-creator.skill`](../../releases/latest/download/agent-creator.skill)
 - [`book-report.skill`](../../releases/latest/download/book-report.skill)
+- [`prompt-evaluation.skill`](../../releases/latest/download/prompt-evaluation.skill)
 
 ### Installation
 
@@ -84,6 +85,32 @@ Each skill can be downloaded separately:
 - "Analyze {Book Title}"
 
 [View full documentation →](./book-report/SKILL.md)
+
+### 🔎 [Prompt Evaluation](./prompt-evaluation)
+
+**Description:** Evaluate prompts, skills, and Claude Code agents for correctness and optimization against the latest Claude best practices, with version-aware migration guidance (e.g., Opus 4 → Opus 4.7).
+
+**Use when:**
+- Reviewing or auditing an existing prompt, `SKILL.md`, or `CLAUDE.md`
+- Migrating an artifact from one Claude model version to another
+- Looking for optimization wins grounded in official docs + community signal
+- Checking correctness before shipping a prompt or agent to production
+
+**Key features:**
+- Three rubrics — one each for prompts, skills, and agents
+- Tiered research strategy: official Anthropic docs first, then authoritative community, then broader community
+- Migration-aware findings tagged with the specific model-version change driving them
+- Prioritized findings (🔴 must fix / 🟡 should fix / 🟢 nice to have) with concrete rewrites
+- Optional rewritten artifact so you can diff against the original
+
+**Trigger phrases:**
+- "Evaluate this prompt / skill / agent"
+- "Review my CLAUDE.md"
+- "Is this prompt still good on Opus 4.7?"
+- "Modernize this for the latest model"
+- "Audit this system prompt"
+
+[View full documentation →](./prompt-evaluation/SKILL.md)
 
 ## Repository Structure
 
