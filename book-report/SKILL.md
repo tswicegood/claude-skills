@@ -179,7 +179,6 @@ Tailor recommendations to context:
 - **Context awareness:** Seamlessly adapt tone and focus to project context
 - **Citation quality:** Focus on authoritative sources (author interviews, scholarly analyses, reputable publications)
 - **Depth over breadth:** Better to deeply analyze 4-5 key concepts than superficially cover 10
-- **Conciseness by default:** Edit ruthlessly to reduce length by ~50% without losing substance (unless verbose mode requested)
 
 ## Response Format
 
@@ -204,5 +203,4 @@ I've completed comprehensive research on [Book Title] by [Author] and edited it 
 - Don't list obvious insights - dig for hidden gems
 - Don't copy book summaries verbatim - paraphrase and cite
 - Don't skip the confirmation step - verify the correct book first
-- Don't skip the editing pass unless verbose mode is requested - wordiness obscures insights
 
