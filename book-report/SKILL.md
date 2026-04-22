@@ -61,6 +61,9 @@ Once confirmed, execute the following structured research process:
   * LOW: 0-1 sources or only announcement/pre-release info
 
 **DECISION CHECKPOINT:**
+
+The search budget scales with *difficulty of surfacing signal*, not importance of the topic: HIGH density means enough is already on the table (stop before you spiral and start repeating yourself); MEDIUM means the signal exists but is buried (dig harder); LOW means it doesn't exist (bail fast rather than keep trying to find content that isn't there).
+
 - IF information density = HIGH → Research Mode OFF (sufficient data in 10-15 total searches)
 - IF information density = MEDIUM → Research Mode PARTIAL (up to 20 searches, focus on depth)
 - IF information density = LOW → Research Mode OFF (stop at 15 searches, note limited availability)
