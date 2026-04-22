@@ -1,6 +1,6 @@
 ---
 name: book-report
-description: Comprehensive research and analysis of books with actionable insights, hidden gems, and personalized recommendations. Use when the user requests book research, book reports, book analysis, or says "Research Book" followed by a book title. Adapts to project context (professional, personal, academic, hobby).
+description: "Produces comprehensive book reports with an 8-section structure (BLUF, overview, summary, action items, strategic applications, hidden gems, critical analysis, personalized recommendations). Use whenever the user asks for book research, a book report, a book analysis, a deep dive on a book, wants to \"research\" a specific title, says \"Research Book: [title]\", or asks what they should take away from a book. Also trigger when the user names a book title and asks for takeaways, insights, lessons, action items, or recommendations. Do NOT use for one-line book recommendations, reading-list generation, or book-purchase decisions — those don't need the full report."
 ---
 
 # Book Report
