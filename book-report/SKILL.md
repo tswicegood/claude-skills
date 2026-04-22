@@ -15,10 +15,6 @@ Activate this skill when the user says:
 - "Analyze {Book Title}"
 - Similar requests for book analysis or research
 
-**Conciseness Modes:**
-- Default: Concise, edited reports (50% reduction from initial draft)
-- Verbose mode: When user requests "detailed," "comprehensive," "full," or "wordy" version
-
 ## Context Adaptation
 
 This skill adapts to the project context (professional/business, personal development, academic, hobby). Infer context from:
@@ -76,30 +72,37 @@ Explicitly state your decision and reasoning before proceeding to Phase 2.
 - Gather information from: book reviews (professional and reader), academic analyses, expert commentary, author interviews, summary resources, related discussions
 - Stop early if searches return redundant information
 
-Create an initial draft with the full report using the structure below.
+Proceed to Step 3 to write the report using the structure below.
 
-### Step 3: Editorial Pass for Conciseness
+### Step 3: Write the Report
 
-**Default behavior (concise mode):**
-After completing the initial draft, perform a rigorous editing pass to reduce content by approximately 50% while preserving all critical insights:
+Decide mode first:
 
-1. **Identify core insights:** Mark the essential points that must remain
-2. **Eliminate redundancy:** Remove repetitive explanations and examples
-3. **Tighten language:** Replace wordy phrases with concise alternatives
-4. **Consolidate sections:** Merge overlapping points
-5. **Focus on actionability:** Keep what's implementable, remove philosophical padding
+- **Verbose mode** — triggered when the user's request includes any of: "detailed," "comprehensive," "full," "thorough," or "wordy." Roughly double the per-section targets below and skip the total-length cap.
+- **Concise mode** (default) — hit the per-section targets below on the first pass. Do not draft-then-edit; write to length directly.
 
-**Quality standards for editing:**
-- Every remaining sentence must serve a clear purpose
-- No loss of critical insights or actionable recommendations
-- Maintain the full 8-section structure
-- Preserve context-specific adaptations
-- Keep all strategic insights from "Hidden Gems"
+**Per-section length targets (concise mode):**
 
-**Verbose mode exception:**
-Skip this step entirely if the user's request includes words like "detailed," "comprehensive," "full," "thorough," or "wordy." Proceed directly with the unedited comprehensive report.
+- Bottom Line Up Front: 80–120 words, one paragraph
+- Book Overview: 2–3 sentences
+- Comprehensive Summary: 4–5 concepts, 100–150 words per concept
+- Immediate Action Items: 5–7 items, 2–3 sentences each
+- Strategic Applications: 3–4 principles, ~100 words each
+- Hidden Gems: minimum 5 takeaways, one tight paragraph each
+- Critical Analysis: 150–250 words total, covering all four sub-points
+- Personalized Recommendations: 2–3 books with 2–3 sentence rationale each
 
-After editing (or if skipping in verbose mode), create an artifact (.md file) with the final report. Also provide a one-paragraph "bottom line up front" summary in the main response.
+**Target total (concise mode): ~2,500–3,500 words. Verbose mode: ~5,000–7,000 words.**
+
+Quality standards for writing to target:
+
+1. Every sentence serves a clear purpose
+2. No repetition of the same insight in different sections
+3. Maintain the full 8-section structure regardless of mode
+4. Preserve context-specific adaptations from `references/context_adaptation.md`
+5. Keep all strategic insights from the "Hidden Gems" section
+
+After writing (in either mode), save the report as a file and present it to the user per the Response Format section below. Also surface the one-paragraph BLUF summary inline in the chat response.
 
 ## Report Structure
 
