@@ -182,18 +182,19 @@ Tailor recommendations to context:
 
 ## Response Format
 
-After completing research:
+After completing research and writing the report:
 
-1. **Main response:** Brief confirmation + one-paragraph BLUF summary + link to artifact
-2. **Artifact:** Full markdown report with all 8 sections
+1. **Main response:** Brief confirmation + the one-paragraph BLUF summary inline + a pointer to the file.
+2. **Report file:** Save the full markdown report to `/mnt/user-data/outputs/<book-title-slug>.md` and surface it via the `present_files` tool so the user can download it. In Claude Code, save to the current working directory instead and mention the path in the main response.
 
 **Example main response:**
+
 ```
-I've completed comprehensive research on [Book Title] by [Author] and edited it for conciseness while preserving all critical insights.
+I've completed the book report for [Book Title] by [Author].
 
 [One-paragraph BLUF summary]
 
-[View your complete book report](computer://...)
+The full report is attached above.
 ```
 
 ## Common Pitfalls to Avoid
