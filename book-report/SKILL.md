@@ -1,6 +1,6 @@
 ---
 name: book-report
-description: Comprehensive research and analysis of books with actionable insights, hidden gems, and personalized recommendations. Use when the user requests book research, book reports, book analysis, or says "Research Book" followed by a book title. Adapts to project context (professional, personal, academic, hobby).
+description: "Produces comprehensive book reports with an 8-section structure (BLUF, overview, summary, action items, strategic applications, hidden gems, critical analysis, personalized recommendations). Use whenever the user asks for book research, a book report, a book analysis, a deep dive on a book, wants to \"research\" a specific title, says \"Research Book: [title]\", or asks what they should take away from a book. Also trigger when the user names a book title and asks for takeaways, insights, lessons, action items, or recommendations. Do NOT use for one-line book recommendations, reading-list generation, or book-purchase decisions — those don't need the full report."
 ---
 
 # Book Report
@@ -14,10 +14,6 @@ Activate this skill when the user says:
 - "Create a book report for {Book Title}"
 - "Analyze {Book Title}"
 - Similar requests for book analysis or research
-
-**Conciseness Modes:**
-- Default: Concise, edited reports (50% reduction from initial draft)
-- Verbose mode: When user requests "detailed," "comprehensive," "full," or "wordy" version
 
 ## Context Adaptation
 
@@ -65,6 +61,9 @@ Once confirmed, execute the following structured research process:
   * LOW: 0-1 sources or only announcement/pre-release info
 
 **DECISION CHECKPOINT:**
+
+The search budget scales with *difficulty of surfacing signal*, not importance of the topic: HIGH density means enough is already on the table (stop before you spiral and start repeating yourself); MEDIUM means the signal exists but is buried (dig harder); LOW means it doesn't exist (bail fast rather than keep trying to find content that isn't there).
+
 - IF information density = HIGH → Research Mode OFF (sufficient data in 10-15 total searches)
 - IF information density = MEDIUM → Research Mode PARTIAL (up to 20 searches, focus on depth)
 - IF information density = LOW → Research Mode OFF (stop at 15 searches, note limited availability)
@@ -76,30 +75,37 @@ Explicitly state your decision and reasoning before proceeding to Phase 2.
 - Gather information from: book reviews (professional and reader), academic analyses, expert commentary, author interviews, summary resources, related discussions
 - Stop early if searches return redundant information
 
-Create an initial draft with the full report using the structure below.
+Proceed to Step 3 to write the report using the structure below.
 
-### Step 3: Editorial Pass for Conciseness
+### Step 3: Write the Report
 
-**Default behavior (concise mode):**
-After completing the initial draft, perform a rigorous editing pass to reduce content by approximately 50% while preserving all critical insights:
+Decide mode first:
 
-1. **Identify core insights:** Mark the essential points that must remain
-2. **Eliminate redundancy:** Remove repetitive explanations and examples
-3. **Tighten language:** Replace wordy phrases with concise alternatives
-4. **Consolidate sections:** Merge overlapping points
-5. **Focus on actionability:** Keep what's implementable, remove philosophical padding
+- **Verbose mode** — triggered when the user's request includes any of: "detailed," "comprehensive," "full," "thorough," or "wordy." Roughly double the per-section targets below and skip the total-length cap.
+- **Concise mode** (default) — hit the per-section targets below on the first pass. Do not draft-then-edit; write to length directly.
 
-**Quality standards for editing:**
-- Every remaining sentence must serve a clear purpose
-- No loss of critical insights or actionable recommendations
-- Maintain the full 8-section structure
-- Preserve context-specific adaptations
-- Keep all strategic insights from "Hidden Gems"
+**Per-section length targets (concise mode):**
 
-**Verbose mode exception:**
-Skip this step entirely if the user's request includes words like "detailed," "comprehensive," "full," "thorough," or "wordy." Proceed directly with the unedited comprehensive report.
+- Bottom Line Up Front: 80–120 words, one paragraph
+- Book Overview: 2–3 sentences
+- Comprehensive Summary: 4–5 concepts, 100–150 words per concept
+- Immediate Action Items: 5–7 items, 2–3 sentences each
+- Strategic Applications: 3–4 principles, ~100 words each
+- Hidden Gems: minimum 5 takeaways, one tight paragraph each
+- Critical Analysis: 150–250 words total, covering all four sub-points
+- Personalized Recommendations: 2–3 books with 2–3 sentence rationale each
 
-After editing (or if skipping in verbose mode), create an artifact (.md file) with the final report. Also provide a one-paragraph "bottom line up front" summary in the main response.
+**Target total (concise mode): ~2,500–3,500 words. Verbose mode: ~5,000–7,000 words.**
+
+Quality standards for writing to target:
+
+1. Every sentence serves a clear purpose
+2. No repetition of the same insight in different sections
+3. Maintain the full 8-section structure regardless of mode
+4. Preserve context-specific adaptations from `references/context_adaptation.md`
+5. Keep all strategic insights from the "Hidden Gems" section
+
+After writing (in either mode), save the report as a file and present it to the user per the Response Format section below. Also surface the one-paragraph BLUF summary inline in the chat response.
 
 ## Report Structure
 
@@ -176,22 +182,22 @@ Tailor recommendations to context:
 - **Context awareness:** Seamlessly adapt tone and focus to project context
 - **Citation quality:** Focus on authoritative sources (author interviews, scholarly analyses, reputable publications)
 - **Depth over breadth:** Better to deeply analyze 4-5 key concepts than superficially cover 10
-- **Conciseness by default:** Edit ruthlessly to reduce length by ~50% without losing substance (unless verbose mode requested)
 
 ## Response Format
 
-After completing research:
+After completing research and writing the report:
 
-1. **Main response:** Brief confirmation + one-paragraph BLUF summary + link to artifact
-2. **Artifact:** Full markdown report with all 8 sections
+1. **Main response:** Brief confirmation + the one-paragraph BLUF summary inline + a pointer to the file.
+2. **Report file:** Save the full markdown report to `/mnt/user-data/outputs/<book-title-slug>.md` and surface it via the `present_files` tool so the user can download it. In Claude Code, save to the current working directory instead and mention the path in the main response.
 
 **Example main response:**
+
 ```
-I've completed comprehensive research on [Book Title] by [Author] and edited it for conciseness while preserving all critical insights.
+I've completed the book report for [Book Title] by [Author].
 
 [One-paragraph BLUF summary]
 
-[View your complete book report](computer://...)
+The full report is attached above.
 ```
 
 ## Common Pitfalls to Avoid
@@ -201,5 +207,4 @@ I've completed comprehensive research on [Book Title] by [Author] and edited it 
 - Don't list obvious insights - dig for hidden gems
 - Don't copy book summaries verbatim - paraphrase and cite
 - Don't skip the confirmation step - verify the correct book first
-- Don't skip the editing pass unless verbose mode is requested - wordiness obscures insights
 
